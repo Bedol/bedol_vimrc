@@ -25,6 +25,9 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 " CtrlP - Ctrl + p
 nnoremap <C-p> :CtrlP<CR>
 
+" Airline
+set laststatus=2
+
 " Emmet type emmet syntax and in insert mode press Ctrl+y+,
 
 " turn off search hightlight - press ,<space>

@@ -2,7 +2,8 @@ My simple .vimrc file.
 
 Added plugins:
 
-vim-endwise
-Emmet
-Ctrlp
-NERTTree
+*vim-endwise
+*vim-airline
+*Emmet
+*Ctrlp
+*NERTTree
