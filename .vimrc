@@ -17,8 +17,15 @@ set autoindent
 set incsearch " search as characters are entered
 set hlsearch "hightlight matches
 
+" PLUGINS ######################################
+
 " NERDTree - Open/Close Ctrl + n
 nnoremap <C-n> :NERDTreeToggle<CR>
+
+" CtrlP - Ctrl + p
+nnoremap <C-p> :CtrlP<CR>
+
+" Emmet type emmet syntax and in insert mode press Ctrl+y+,
 
 " turn off search hightlight - press ,<space>
 nnoremap <leader><space> :nohlsearch<CR>
