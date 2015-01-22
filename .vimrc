@@ -3,6 +3,7 @@ syntax enable
 
 " UI CONFIG
 set number " show line numbers
+set ruler	" show ruler in buttom bar
 set showcmd " show command in buttom bar
 set cursorline " hightlight current line
 filetype indent on " load filetype-specific indent files
@@ -16,6 +17,8 @@ set autoindent
 set incsearch " search as characters are entered
 set hlsearch "hightlight matches
 
+" NERDTree - Open/Close Ctrl + n
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 " turn off search hightlight - press ,<space>
 nnoremap <leader><space> :nohlsearch<CR>
@@ -87,3 +90,5 @@ set softtabstop=4
 
 " Turning TAB in to spaces
 "set expandtab
+
+execute pathogen#infect()
