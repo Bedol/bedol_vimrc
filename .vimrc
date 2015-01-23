@@ -22,6 +22,9 @@ set hlsearch "hightlight matches
 " NERDTree - Open/Close Ctrl + n
 nnoremap <C-n> :NERDTreeToggle<CR>
 
+" GitGutter - Open/Close Ctrl+g
+nnoremap <C-n> :GitGutterToggle<CR>
+
 " CtrlP - Ctrl + p
 nnoremap <C-p> :CtrlP<CR>
 
@@ -93,10 +96,11 @@ set background=dark
 
 
 " Number of visual spaces per TAB
-set tabstop=4
+set tabstop=2
 
 " Number of spaces in tab when editing
-set softtabstop=4
+set softtabstop=2
+set shiftwidth=2
 
 " Turning TAB in to spaces
 "set expandtab
