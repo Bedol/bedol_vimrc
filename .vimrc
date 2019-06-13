@@ -1,108 +1,41 @@
-" Enable colorize syntax
-syntax enable
+execute pathogen#infect()
 
-" UI CONFIG
-set number " show line numbers
-set ruler	" show ruler in buttom bar
-set showcmd " show command in buttom bar
-set cursorline " hightlight current line
-filetype indent on " load filetype-specific indent files
-set wildmenu " visual autocomplete for command menu
-set lazyredraw " redraw only when we need to
-set showmatch " hightlight matching [{()}]
-set autoindent
+set encoding=utf-8
+let mapleader=","
 
-
-" Searching
-set incsearch " search as characters are entered
-set hlsearch "hightlight matches
-
-" PLUGINS ######################################
-
-" NERDTree - Open/Close Ctrl + n
-nnoremap <C-n> :NERDTreeToggle<CR>
-
-" GitGutter - Open/Close Ctrl+g
-nnoremap <C-n> :GitGutterToggle<CR>
-
-" CtrlP - Ctrl + p
-nnoremap <C-p> :CtrlP<CR>
-
-" Airline
-set laststatus=2
-
-" Emmet type emmet syntax and in insert mode press Ctrl+y+,
-
-" turn off search hightlight - press ,<space>
-nnoremap <leader><space> :nohlsearch<CR>
-
-
-" Folding
-set foldenable " enable folding
-set foldlevelstart=10 " open most folds by default
-set foldnestmax=10 " 10 nested fold max
-
-
-" space open/closes folds
-nnoremap <space> za
-set foldmethod=indent " fold based on indent level
-
-
-" MOVEMENT ##########################################
-
-" move vertically by visual line
-nnoremap j gj
-nnoremap k gk
-
-" move to begining/end of line
-nnoremap B ^
-nnoremap E $
-
-" $/^ dosent't do anything
-nnoremap $ <nop>
-nnoremap ^ <nop>
-
-" hightlight last inserted text
-nnoremap gV '[v']
-
-
-" LOADER SHORTCUTS ##################################
-
-let mapleader=","	" leader is comma
-
-" jk is escape
 inoremap jk <esc>
 
-" toggle guano
-" nnoremap <leader>u :GundoToggle<CR>
+syntax enable
+set t_Co=256
+colorscheme wombat256mod
 
-" edit vimrc/zshrc and load vimrc bindings
-nnoremap <leader>ev :vsp $MYVIMRC<CR>
-nnoremap <leader>ez :vsp ~/.zshrc<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
+set number
+set ruler
+set showcmd
+set cursorline
+set wildmenu
+set showmatch
+set autoindent
 
-" save session
-nnoremap <leader>s :mksession<CR>
+filetype plugin indent on
 
-" COLORS ############################################
-
-" Seting color scheme
-colorscheme molokai
-let g:molokai_original = 1
-
-
-" Backgrand scheme 
-set background=dark
+set incsearch
+set hlsearch
 
 
-" Number of visual spaces per TAB
-set tabstop=2
+" NERDTree conf
+map <C-n> :NERDTreeToggle<CR>
 
-" Number of spaces in tab when editing
-set softtabstop=2
-set shiftwidth=2
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " Close vim if only NerdTree window left
 
-" Turning TAB in to spaces
-"set expandtab
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let NERDTreeShowHidden=1
+let NERDTreeQuitOnOpen = 1
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
-execute pathogen#infect()
+" CtrlP conf
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_working_path_mode = 'ra'
